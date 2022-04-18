@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>SQL Sort</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">SQL Builder</span>
+        </div>
+      </nav>
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">schema.T_Name (ID 412)</strong>
+                <small>Wed</small>
+              </div>
+              <div class="col-10 mb-1 small">Created by [username] at 2:15pm CET</div>
+              </a>
+              <a href="#">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">schema.T_Ref_Name (ID 416)</strong>
+                    <small>Tue</small>
+                  </div>
+                  <div class="col-10 mb-1 small">Created by [username] at 4:22pm CET</div>
+                  </a>
+                  <a href="#">
+                    <div class="d-flex w-100 align-items-center justify-content-between">
+                        <strong class="mb-1">schema_other.T_Ref_Name (ID 476)</strong>
+                        <small>Mon</small>
+                      </div>
+                      <div class="col-10 mb-1 small">Created by [username] at 1:47pm CET</div>
+                      </a>
+                      <a href="#">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">schema_other.T_Ref_Name2 (ID 512)</strong>
+                            <small>Mon</small>
+                          </div>
+                          <div class="col-10 mb-1 small">Created by [username] at 11:10am CET</div>
+                          </a>
+                  </div>
+
+      <div class="col-lg-8 mx-auto p-3 py-md-5">
+        <h1>SQL Table Builder</h1>
+        <p class="fs-5 col-md-8">Quickly and easily create SQL tables in 4 steps without the technical hassle to write actual SQL code yourself.</p>
+        <hr >
+      </div>
+
+      <div class="container mt-5 mb-5">
+        Optional: <span class="fs-5" style="cursor:pointer" onclick="openNav()">Load previously stored tables &#9776;</span>
+      </div>
+
+    <div class="container mt-5 mb-5">
+        <p class="fs-5 mb-0">Step 1: Create the SQL table</p>
+        <hr class="mt-0 mb-2">
+
+        <div class="form-row row align-items-center">
+            <div class="col-sm-3 my-1">
+              <label class="sr-only" for="inlineFormInputName">Schema</label>
+              <input type="text" class="form-control" id="inlineFormInputName" placeholder="example_schema">
+            </div>
+            <div class="col-sm-3 my-1">
+              <label class="sr-only" for="inlineFormInputGroupUsername">Table name</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">.</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="T_Example_Table">
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="table-responsive">
+        <table class="table table-hover table-bordered-custom" id="tabl">
+            <thead>
+              <tr>
+                <th>Column Name</th>
+                <th style="width: 15%">Column Type</th>
+                <th style="width: 8%">Length</th>
+                <th>Description</th>
+                <th>Empty column</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable='true'>ProductID</td>
+                <td><select class='form-select' disabled><option value=''selected="true">Integer</option>\
+                    </select></td>
+                    <td>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="30" disabled>
+                    </td>
+                <td contenteditable='true'>ID of the product</td>
+                <td><input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" disabled>
+                    <label class="btn btn-outline-success" for="btn-check-outlined">Nullable</label><br>                    
+                </td>
+
+              </tr>
+              <tr>
+                <td contenteditable='true'>ProductName</td>
+                <td><select class='form-select'><option value=''>Integer</option>\
+                    <option value=''>Float</option>\
+                    <option value=''>String</option>\
+                    <option value=''>Boolean</option>\
+                    <option value=''>Character</option>\
+                    <option value=''>Date</option>\
+                    <option value=''>Date&Time</option>\
+                    </select></td>
+                    <td>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="30">
+                    </td>
+                <td contenteditable='true'>Name of the product<span class="delete_it">x</span>
+                </td>
+                <td><input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                    <label class="btn btn-outline-success" for="btn-check-2-outlined">Nullable</label><br>                    
+                </td>
+              </tr>
+              <tr>
+                <td contenteditable='true'>Value</td>
+                <td> <select class='form-select'><option value=''>Integer</option>\
+                    <option value=''>Float</option>\
+                    <option value=''>String</option>\
+                    <option value=''>Boolean</option>\
+                    <option value=''>Character</option>\
+                    <option value=''>Date</option>\
+                    <option value=''>Date&Time</option>\
+                    </select></td>
+                    <td>
+                        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="30">
+
+                    </td>
+                <td contenteditable='true'>NAV value<span class="delete_it">x</span></td>
+                <td><input type="checkbox" class="btn-check" id="btn-check-3-outlined" checked autocomplete="off">
+                    <label class="btn btn-outline-success" for="btn-check-3-outlined">Nullable</label><br>                    
+                </td>
+
+              </tr>
+            </tbody>  
+        </table>  
+    </div>
+    <button class="add" type="button">Add Column</button>
+
+</div>
+
+<div class="container mt-5 mb-5">
+
+<div class="form-group row">
+    <div class="col-sm-3">Additional Settings</div>
+    <div class="col-sm-8">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck11" checked>
+        <label class="form-check-label" for="gridCheck11">
+          Add "Created/Modified" columns to table output
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck2" checked>
+        <label class="form-check-label" for="gridCheck22">
+          Create audit trail file
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <p class="fs-5 mb-0">Step 2: Produce the output</p>
+    <hr class="mt-0 mb-2">
+
+    <div class="mb-2">
+    <button type="button" class="btn btn-dark" id="compile_file">Prepare files</button>
+    <button type="button" class="btn btn-secondary">Copy code</button>
+    <button type="button" class="btn btn-secondary">Save output</button>
+    <button type="button" class="btn btn-secondary">Send per mail</button>
+</div>
+
+</div>
+  
+  
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <script src="javascript.js"></script>
+      <script src="javascript_download.js"></script>
+      <script src="javascript_compile.js"></script>
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
